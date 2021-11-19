@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imgPet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/custom_img"
+            android:padding="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/pruebaperro" />
+
+        <TextView
+            android:id="@+id/tvPetName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/arlrdbd"
+            android:text="Tipsy"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#424242"
+            android:textSize="34sp"
+            app:layout_constraintStart_toEndOf="@+id/imgPet"
+            app:layout_constraintTop_toTopOf="@+id/imgPet" />
+
+        <ImageView
+            android:id="@+id/imgGenre"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvPetName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvPetName"
+            app:srcCompat="@drawable/ic_female" />
+
+        <TextView
+            android:id="@+id/tvBreed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/raleway_medium"
+            android:text="Chiguagua"
+            android:textColor="#424242"
+            app:layout_constraintEnd_toEndOf="@+id/imgGenre"
+            app:layout_constraintStart_toStartOf="@+id/tvPetName"
+            app:layout_constraintTop_toBottomOf="@+id/tvPetName" />
+
+        <TextView
+            android:id="@+id/tvAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/raleway_light"
+            android:text="73 días de edad"
+            android:textColor="#424242"
+            app:layout_constraintStart_toStartOf="@+id/tvBreed"
+            app:layout_constraintTop_toBottomOf="@+id/tvBreed" />
+
+        <TextView
+            android:id="@+id/tvCharasteristic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/raleway_medium"
+            android:text="Amigable y juguetona"
+            android:textColor="#424242"
+            app:layout_constraintStart_toStartOf="@+id/tvAge"
+            app:layout_constraintTop_toBottomOf="@+id/tvAge" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
