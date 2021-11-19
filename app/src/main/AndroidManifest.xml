@@ -8,6 +8,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.BuscandoAmor"></application>
+        android:theme="@style/Theme.BuscandoAmor">
+        <activity
+            android:name=".PetActivity"
+            android:exported="false" />
+    </application>
 
 </manifest>
