@@ -223,6 +223,7 @@
             android:layout_marginBottom="16dp"
             android:background="@drawable/btn_main"
             android:fontFamily="@font/arlrdbd"
+            android:minWidth="200dp"
             android:text="Adoptame"
             android:textAllCaps="false"
             android:textColor="#6727AF"

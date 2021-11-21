@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BuscandoAmor">
         <activity
-            android:name=".MenuActivity"
+            android:name=".AdoptionRequestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
@@ -19,13 +22,13 @@
             android:name=".PetActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
-            android:exported="false" />
-        <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".FormActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenuActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

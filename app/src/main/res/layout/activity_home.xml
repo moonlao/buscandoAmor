@@ -104,7 +104,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="24dp"
             android:background="@drawable/custom_input"
             android:backgroundTint="#6727AF"
@@ -136,11 +136,33 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDog" />
+
+        <TextView
+            android:id="@+id/tvDog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Perro"
+            android:textColor="#6727AF"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/btnDog"
+            app:layout_constraintStart_toStartOf="@+id/btnDog"
             app:layout_constraintTop_toBottomOf="@+id/btnDog" />
+
+        <TextView
+            android:id="@+id/tvCat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gato"
+            android:textColor="#818181"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/btnCat"
+            app:layout_constraintStart_toStartOf="@+id/btnCat"
+            app:layout_constraintTop_toBottomOf="@+id/btnCat" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
