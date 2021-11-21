@@ -7,6 +7,7 @@
         <entry key="..\:/Proyectos_Android/buscandoAmor/app/src/main/res/drawable/btn_main.xml" value="0.24259259259259258" />
         <entry key="..\:/Proyectos_Android/buscandoAmor/app/src/main/res/drawable/btn_rounded.xml" value="0.24259259259259258" />
         <entry key="..\:/Proyectos_Android/buscandoAmor/app/src/main/res/drawable/cl_rounded.xml" value="0.24259259259259258" />
+        <entry key="..\:/Proyectos_Android/buscandoAmor/app/src/main/res/drawable/cl_rounded_menu.xml" value="0.1" />
         <entry key="..\:/Proyectos_Android/buscandoAmor/app/src/main/res/drawable/custom_img.xml" value="0.24259259259259258" />
         <entry key="..\:/Proyectos_Android/buscandoAmor/app/src/main/res/drawable/custom_input.xml" value="0.24259259259259258" />
         <entry key="..\:/Proyectos_Android/buscandoAmor/app/src/main/res/drawable/ic_arrow.xml" value="0.24259259259259258" />
@@ -15,11 +16,12 @@
         <entry key="..\:/Proyectos_Android/buscandoAmor/app/src/main/res/drawable/ic_huellas.xml" value="0.24259259259259258" />
         <entry key="..\:/Proyectos_Android/buscandoAmor/app/src/main/res/drawable/ic_male_big.xml" value="0.24259259259259258" />
         <entry key="..\:/Proyectos_Android/buscandoAmor/app/src/main/res/drawable/ic_profile_pic.xml" value="0.24259259259259258" />
-        <entry key="..\:/Proyectos_Android/buscandoAmor/app/src/main/res/layout-v23/activity_form.xml" value="0.25" />
+        <entry key="..\:/Proyectos_Android/buscandoAmor/app/src/main/res/layout-v23/activity_form.xml" value="0.18" />
         <entry key="..\:/Proyectos_Android/buscandoAmor/app/src/main/res/layout/activity_form.xml" value="0.28306159420289856" />
         <entry key="..\:/Proyectos_Android/buscandoAmor/app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="..\:/Proyectos_Android/buscandoAmor/app/src/main/res/layout/activity_login.xml" value="0.28306159420289856" />
         <entry key="..\:/Proyectos_Android/buscandoAmor/app/src/main/res/layout/activity_main.xml" value="0.28306159420289856" />
+        <entry key="..\:/Proyectos_Android/buscandoAmor/app/src/main/res/layout/activity_menu.xml" value="0.22" />
         <entry key="..\:/Proyectos_Android/buscandoAmor/app/src/main/res/layout/activity_pet.xml" value="0.25" />
         <entry key="..\:/Proyectos_Android/buscandoAmor/app/src/main/res/layout/activity_register.xml" value="0.28306159420289856" />
         <entry key="..\:/Proyectos_Android/buscandoAmor/app/src/main/res/layout/pet_card.xml" value="0.28306159420289856" />
