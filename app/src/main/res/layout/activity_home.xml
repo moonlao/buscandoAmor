@@ -52,7 +52,7 @@
         app:layout_constraintTop_toTopOf="@+id/imageView5" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/tvNameHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/raleway_semibold"
@@ -133,6 +133,7 @@
             tools:ignore="SpeakableTextPresentCheck" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvHome"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="24dp"
