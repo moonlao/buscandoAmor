@@ -6,6 +6,6 @@
     android:layout_height="match_parent"
     android:background="#6727AF"
     android:foreground="@drawable/ic_huellas"
-    tools:context=".FormActivity">
+    tools:context="activities.FormActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

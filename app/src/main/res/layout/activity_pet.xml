@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#BFB5F9"
-    tools:context=".PetActivity">
+    tools:context="activities.PetActivity">
 
     <ImageView
         android:id="@+id/btnBackPet"

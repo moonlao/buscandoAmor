@@ -1,14 +1,16 @@
-package com.moonlao.buscandoamor;
+package activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class PetActivity extends AppCompatActivity {
+import com.moonlao.buscandoamor.R;
+
+public class MenuActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pet);
+        setContentView(R.layout.activity_menu);
     }
 }

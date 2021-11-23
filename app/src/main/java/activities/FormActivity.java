@@ -1,14 +1,16 @@
-package com.moonlao.buscandoamor;
+package activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MenuActivity extends AppCompatActivity {
+import com.moonlao.buscandoamor.R;
+
+public class FormActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_form);
     }
 }

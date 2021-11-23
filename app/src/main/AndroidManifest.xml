@@ -10,25 +10,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BuscandoAmor">
         <activity
-            android:name=".PetActivity"
+            android:name="activities.PetActivity"
             android:exported="false" />
         <activity
-            android:name=".AdoptionRequestActivity"
+            android:name="activities.AdoptionRequestActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name="activities.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name="activities.MenuActivity"
             android:exported="false" />
         <activity
-            android:name=".FormActivity"
+            android:name="activities.FormActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name="activities.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".MenuActivity"
+            android:name="activities.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1091939386420",
+    "project_id": "buscando-amor-15a00",
+    "storage_bucket": "buscando-amor-15a00.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1091939386420:android:e3c0d6f1736e8e789df661",
+        "android_client_info": {
+          "package_name": "com.moonlao.buscandoamor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1091939386420-oain7djqo50m9o3l2evbv7hsc8ip9vn6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeVN1McbndolfeOoF9fyQBZk5GubYF_fE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1091939386420-oain7djqo50m9o3l2evbv7hsc8ip9vn6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

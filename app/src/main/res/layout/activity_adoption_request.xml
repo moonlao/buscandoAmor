@@ -7,7 +7,7 @@
     android:background="#6727AF"
     android:foreground="@drawable/ic_huellas"
     android:foregroundGravity="fill_vertical"
-    tools:context=".AdoptionRequestActivity">
+    tools:context="activities.AdoptionRequestActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline10"
