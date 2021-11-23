@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.moonlao.buscandoamor.R;
 
 public class LoginActivity extends AppCompatActivity  {
@@ -17,6 +18,8 @@ public class LoginActivity extends AppCompatActivity  {
     private EditText etEmail,etPassword;
     private ImageButton btnLogin;
     private TextView tvRegister;
+    private FirebaseAuth auth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +29,7 @@ public class LoginActivity extends AppCompatActivity  {
         etPassword= findViewById(R.id.etPasswordLogin);
         btnLogin = findViewById(R.id.btnLogin);
         tvRegister=findViewById(R.id.tvRegister);
+        auth=FirebaseAuth.getInstance();
 
         btnLogin.setOnClickListener(v->{
 
@@ -36,9 +40,8 @@ public class LoginActivity extends AppCompatActivity  {
             }
             else{
 
-                Intent intent = new Intent(this,HomeActivity.class);
-                startActivity(intent);
-                finish();
+                Login();
+
 
             }
 
@@ -51,5 +54,24 @@ public class LoginActivity extends AppCompatActivity  {
             finish();
 
         });
+    }
+
+    private void Login() {
+
+        auth.signInWithEmailAndPassword(etEmail.getText().toString(),etPassword.getText().toString()).addOnCompleteListener(task -> {
+
+            if(task.isSuccessful()){
+
+                Intent intent = new Intent(this,HomeActivity.class);
+                startActivity(intent);
+                finish();
+            }
+
+            else{
+
+                Toast.makeText(this,task.getException().toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }

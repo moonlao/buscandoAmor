@@ -13,6 +13,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 import com.moonlao.buscandoamor.R;
 
+import model.User;
+
 public class RegisterActivity extends AppCompatActivity {
 
     private EditText etName,etEmail,etPassword,etPasswordRepeat;
@@ -69,13 +71,24 @@ public class RegisterActivity extends AppCompatActivity {
            if(task.isSuccessful()){
 
                //se registra
-            
+
+               User tempUser= new User(auth.getUid(), etName.getText().toString(),etEmail.getText().toString());
+
+               db.getReference("Users").child(tempUser.getId()).setValue(tempUser);
+
+               Intent intent = new Intent(this,HomeActivity.class);
+               startActivity(intent);
+               finish();
 
            }
+
+           else{
+
+               Toast.makeText(this,task.getException().toString(), Toast.LENGTH_SHORT).show();
+           }
         });
-        Intent intent = new Intent(this,HomeActivity.class);
-        startActivity(intent);
-        finish();
+
+
 
     }
 
