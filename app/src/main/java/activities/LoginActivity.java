@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.moonlao.buscandoamor.R;
 
 public class LoginActivity extends AppCompatActivity  {
@@ -30,6 +31,15 @@ public class LoginActivity extends AppCompatActivity  {
         btnLogin = findViewById(R.id.btnLogin);
         tvRegister=findViewById(R.id.tvRegister);
         auth=FirebaseAuth.getInstance();
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if(user!=null){
+
+            Intent intent = new Intent(this,HomeActivity.class);
+            startActivity(intent);
+            finish();
+        }
 
         btnLogin.setOnClickListener(v->{
 

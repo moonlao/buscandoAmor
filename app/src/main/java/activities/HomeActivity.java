@@ -1,19 +1,30 @@
 package activities;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.moonlao.buscandoamor.R;
 
 import org.w3c.dom.Text;
+
+import model.User;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -21,6 +32,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private ImageButton btnDog,btnCat;
     private RecyclerView rvHome;
     private TextView tvDog,tvCat;
+    private ImageView imgMenu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,8 +44,13 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         rvHome=findViewById(R.id.rvHome);
         tvDog=findViewById(R.id.tvDog);
         tvCat=findViewById(R.id.tvCat);
+        imgMenu = findViewById(R.id.imgMenu);
         btnDog.setOnClickListener(this);
         btnCat.setOnClickListener(this);
+        imgMenu.setOnClickListener(this);
+        LoadName();
+
+
 
 
     }
@@ -54,9 +71,34 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 SetDogs();
                 break;
 
+            case R.id.imgMenu:
+
+                Intent intent = new Intent(this,MenuActivity.class);
+                startActivity(intent);
+                break;
+
         }
     }
 
+    private void LoadName(){
+
+        String uid= FirebaseAuth.getInstance().getUid();
+
+        FirebaseDatabase.getInstance().getReference("Users").child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User tempUser = snapshot.getValue(User.class);
+
+                tvName.setText(tempUser.getName());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
     private void SetDogs(){
 
         btnDog.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#6727AF")));
