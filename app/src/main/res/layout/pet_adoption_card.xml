@@ -63,25 +63,26 @@
             app:layout_constraintTop_toBottomOf="@+id/tvPetName" />
 
         <TextView
-            android:id="@+id/tvAge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/raleway_light"
-            android:text="73 días de edad"
-            android:textColor="#424242"
-            app:layout_constraintStart_toStartOf="@+id/tvBreed"
-            app:layout_constraintTop_toBottomOf="@+id/tvBreed" />
-
-        <TextView
             android:id="@+id/a"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/raleway_medium"
-            android:text="Amigable y juguetona"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/raleway_bold"
+            android:text="Estado:"
             android:textColor="#424242"
-            app:layout_constraintStart_toStartOf="@+id/tvAge"
-            app:layout_constraintTop_toBottomOf="@+id/tvAge" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgPet"
+            app:layout_constraintTop_toBottomOf="@+id/tvBreed" />
+
+        <TextView
+            android:id="@+id/tvAdoptionStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/a"
+            app:layout_constraintStart_toEndOf="@+id/a"
+            app:layout_constraintTop_toTopOf="@+id/a" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

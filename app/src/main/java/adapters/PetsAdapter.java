@@ -12,7 +12,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
 import com.moonlao.buscandoamor.R;
 
@@ -108,7 +107,7 @@ public class PetsAdapter extends RecyclerView.Adapter<PetsAdapter.PetViewHolder>
             petName= itemView.findViewById(R.id.tvPetName);
             petBreed = itemView.findViewById(R.id.tvBreed);
             petAge = itemView.findViewById(R.id.tvAge);
-            petCharacteristic = itemView.findViewById(R.id.tvCharasteristic);
+            petCharacteristic = itemView.findViewById(R.id.a);
             imgGenre = itemView.findViewById(R.id.imgGenre);
             petImg = itemView.findViewById(R.id.imgPet);
         }
