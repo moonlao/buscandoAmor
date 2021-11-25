@@ -1,5 +1,6 @@
 package adapters;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,10 +13,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.gson.Gson;
 import com.moonlao.buscandoamor.R;
 
 import java.util.ArrayList;
 
+import activities.PetActivity;
 import model.Pet;
 
 public class PetsAdapter extends RecyclerView.Adapter<PetsAdapter.PetViewHolder> {
@@ -75,6 +78,15 @@ public class PetsAdapter extends RecyclerView.Adapter<PetsAdapter.PetViewHolder>
                 break;
         }
         Glide.with(group.getContext()).load(petsList.get(position).getImg()).into(holder.petImg);
+
+        holder.root.setOnClickListener(v->{
+
+            Intent intent = new Intent(group.getContext(), PetActivity.class);
+            Gson gson = new Gson();
+            String pet = gson.toJson(petsList.get(position));
+            intent.putExtra("pet",pet);
+            group.getContext().startActivity(intent);
+        });
     }
 
     @Override
