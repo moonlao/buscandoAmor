@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,40 +25,77 @@ import com.moonlao.buscandoamor.R;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
+
+import adapters.PetsAdapter;
+import model.Pet;
 import model.User;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView tvName;
-    private ImageButton btnDog,btnCat;
+    private ImageButton btnDog, btnCat;
     private RecyclerView rvHome;
-    private TextView tvDog,tvCat;
+    private TextView tvDog, tvCat;
     private ImageView imgMenu;
+    private PetsAdapter adapter;
+    private ArrayList<Pet> petList;
+    private FirebaseDatabase db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        tvName=findViewById(R.id.tvNameHome);
-        btnCat=findViewById(R.id.btnCat);
-        btnDog=findViewById(R.id.btnDog);
-        rvHome=findViewById(R.id.rvHome);
-        tvDog=findViewById(R.id.tvDog);
-        tvCat=findViewById(R.id.tvCat);
+        tvName = findViewById(R.id.tvNameHome);
+        btnCat = findViewById(R.id.btnCat);
+        btnDog = findViewById(R.id.btnDog);
+        rvHome = findViewById(R.id.rvHome);
+        tvDog = findViewById(R.id.tvDog);
+        tvCat = findViewById(R.id.tvCat);
         imgMenu = findViewById(R.id.imgMenu);
         btnDog.setOnClickListener(this);
         btnCat.setOnClickListener(this);
         imgMenu.setOnClickListener(this);
+        db = FirebaseDatabase.getInstance();
+        petList = new ArrayList<>();
+        adapter = new PetsAdapter();
+        rvHome.setAdapter(adapter);
+        rvHome.setLayoutManager(new LinearLayoutManager(this));
+        LoadPets();
         LoadName();
-
-
 
 
     }
 
+    private void LoadPets() {
+
+        db.getReference().child("Pets").addValueEventListener(
+                new ValueEventListener() {
+
+                    public void onDataChange(DataSnapshot snapshot) {
+                        adapter.clear();
+
+                        for (DataSnapshot child : snapshot.getChildren()) {
+                            Pet tempPet = child.getValue(Pet.class);
+                            adapter.addNewPet(tempPet);
+
+                        }
+
+                    }
+
+
+                    @Override
+                    public void onCancelled(DatabaseError error) {
+
+                    }
+                }
+        );
+    }
+
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
 
 
             case R.id.btnCat:
@@ -73,16 +111,16 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.imgMenu:
 
-                Intent intent = new Intent(this,MenuActivity.class);
+                Intent intent = new Intent(this, MenuActivity.class);
                 startActivity(intent);
                 break;
 
         }
     }
 
-    private void LoadName(){
+    private void LoadName() {
 
-        String uid= FirebaseAuth.getInstance().getUid();
+        String uid = FirebaseAuth.getInstance().getUid();
 
         FirebaseDatabase.getInstance().getReference("Users").child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -99,7 +137,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         });
 
     }
-    private void SetDogs(){
+
+    private void SetDogs() {
 
         btnDog.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#6727AF")));
         btnDog.setImageTintList(ColorStateList.valueOf(Color.parseColor("#ffffff")));
@@ -111,7 +150,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    private void SetCats(){
+    private void SetCats() {
 
         btnCat.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#6727AF")));
         btnCat.setImageTintList(ColorStateList.valueOf(Color.parseColor("#ffffff")));
