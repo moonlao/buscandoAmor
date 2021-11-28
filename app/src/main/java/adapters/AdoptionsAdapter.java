@@ -62,10 +62,8 @@ public class AdoptionsAdapter extends RecyclerView.Adapter<AdoptionsAdapter.Adop
     @Override
     public void onBindViewHolder(@NonNull AdoptionViewHolder holder, int position) {
 
-        //carga los datos del perro con el id;
 
-        // TODO: 25/11/2021  id de firebase debe ser el mismo que el del objeto mascota 
-        FirebaseDatabase.getInstance().getReference("Pets").child("asdasdasda").addValueEventListener(
+        FirebaseDatabase.getInstance().getReference("Pets").child(adoptionList.get(position).getPetId()).addValueEventListener(
 
                 new ValueEventListener() {
                     @Override
@@ -74,7 +72,7 @@ public class AdoptionsAdapter extends RecyclerView.Adapter<AdoptionsAdapter.Adop
                         Pet pet = snapshot.getValue(Pet.class);
 
                         //verifica que el animal existe ( por si las moscas)
-                        Log.e("TAG", pet.getAge() );
+
                         if(pet!=null){
 
                             holder.petName.setText(pet.getName());
@@ -94,7 +92,6 @@ public class AdoptionsAdapter extends RecyclerView.Adapter<AdoptionsAdapter.Adop
                             }
                             Glide.with(group.getContext()).load(pet.getImg()).into(holder.petImg);
                         }
-
 
 
                     }

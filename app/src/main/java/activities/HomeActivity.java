@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.moonlao.buscandoamor.R;
@@ -39,8 +40,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private TextView tvDog, tvCat;
     private ImageView imgMenu;
     private PetsAdapter adapter;
-    private ArrayList<Pet> petList;
     private FirebaseDatabase db;
+    private DatabaseReference dbRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,19 +59,19 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         btnCat.setOnClickListener(this);
         imgMenu.setOnClickListener(this);
         db = FirebaseDatabase.getInstance();
-        petList = new ArrayList<>();
+        dbRef=FirebaseDatabase.getInstance().getReference();
         adapter = new PetsAdapter();
         rvHome.setAdapter(adapter);
         rvHome.setLayoutManager(new LinearLayoutManager(this));
-        LoadPets();
         LoadName();
 
+        SetDogs();
 
     }
 
-    private void LoadPets() {
+    /*private void LoadPets() {
 
-        db.getReference().child("Pets").addValueEventListener(
+        dbRef.addValueEventListener(
                 new ValueEventListener() {
 
                     public void onDataChange(DataSnapshot snapshot) {
@@ -92,6 +93,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 }
         );
     }
+
+     */
 
     @Override
     public void onClick(View v) {
@@ -118,6 +121,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+
+
     private void LoadName() {
 
         String uid = FirebaseAuth.getInstance().getUid();
@@ -140,6 +145,25 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     private void SetDogs() {
 
+        db.getReference().child("Pets").orderByChild("type").equalTo("dog").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                adapter.clear();
+
+                for (DataSnapshot child : snapshot.getChildren()) {
+                    Pet tempPet = child.getValue(Pet.class);
+                    adapter.addNewPet(tempPet);
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         btnDog.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#6727AF")));
         btnDog.setImageTintList(ColorStateList.valueOf(Color.parseColor("#ffffff")));
         tvDog.setTextColor(Color.parseColor("#6727AF"));
@@ -152,6 +176,24 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     private void SetCats() {
 
+        db.getReference().child("Pets").orderByChild("type").equalTo("cat").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                adapter.clear();
+
+                for (DataSnapshot child : snapshot.getChildren()) {
+                    Pet tempPet = child.getValue(Pet.class);
+                    adapter.addNewPet(tempPet);
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         btnCat.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#6727AF")));
         btnCat.setImageTintList(ColorStateList.valueOf(Color.parseColor("#ffffff")));
         tvCat.setTextColor(Color.parseColor("#6727AF"));
