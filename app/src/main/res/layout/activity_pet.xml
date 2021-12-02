@@ -47,7 +47,7 @@
             android:fontFamily="@font/raleway_semibold"
             android:text="Pug"
             android:textColor="#424242"
-            android:textSize="34sp"
+            android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -71,7 +71,7 @@
             android:backgroundTint="#673AB7"
             app:layout_constraintEnd_toStartOf="@+id/clColor"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvBreedScreen">
 
@@ -83,7 +83,7 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="8dp"
                 android:fontFamily="@font/raleway_semibold"
-                android:text="8"
+                android:text="8 meses"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -121,31 +121,19 @@
             app:layout_constraintTop_toTopOf="@+id/clAge">
 
             <TextView
-                android:id="@+id/textView18"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
-                android:fontFamily="@font/raleway_regular"
-                android:text="Color"
-                android:textColor="#FFFFFF"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvPetColor" />
-
-            <TextView
                 android:id="@+id/tvPetColor"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="8dp"
+                android:layout_marginBottom="24dp"
                 android:fontFamily="@font/raleway_semibold"
-                android:text="Café"
+                android:text="Gris"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -191,13 +179,13 @@
                 android:id="@+id/textView19"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_marginTop="8dp"
                 android:fontFamily="@font/raleway_regular"
                 android:text="Sexo"
                 android:textColor="#FFFFFF"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintEnd_toEndOf="@+id/imgGenreView"
+                app:layout_constraintStart_toStartOf="@+id/imgGenreView"
+                app:layout_constraintTop_toBottomOf="@+id/imgGenreView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
