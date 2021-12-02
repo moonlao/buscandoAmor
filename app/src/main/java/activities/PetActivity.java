@@ -1,6 +1,7 @@
 package activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.content.res.ColorStateList;
@@ -27,14 +28,16 @@ public class PetActivity extends AppCompatActivity implements View.OnClickListen
     private ImageView btnBack,imgGenreView,imgPetScreen;
     private Button btnAdopt;
     private Pet currentPet;
+    private ConstraintLayout container,clAge,clColor,clGenre;
     String pet;
-    private TextView tvPetNameScreen,tvBreedScreen,tvPetAge,tvPetColor,tvDescription;
+    private TextView tvPetNameScreen,tvBreedScreen,tvPetAge,tvPetColor,tvDescription,edad,genre;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pet);
         btnBack=findViewById(R.id.btnBackPet);
         btnAdopt=findViewById(R.id.btnAdopt);
+        container = findViewById(R.id.container);
         btnBack.setOnClickListener(this);
         btnAdopt.setOnClickListener(this);
         tvPetNameScreen= findViewById(R.id.tvPetNameScreen);
@@ -44,9 +47,13 @@ public class PetActivity extends AppCompatActivity implements View.OnClickListen
         tvDescription = findViewById(R.id.tvDescription);
         imgGenreView = findViewById(R.id.imgGenreView);
         imgPetScreen = findViewById(R.id.imgPetScreen);
+        edad= findViewById(R.id.tvEdadholder);
+        genre= findViewById(R.id.genreHolder);
+        clAge = findViewById(R.id.clAge);
+        clColor=findViewById(R.id.clColor);
+        clGenre = findViewById(R.id.clGender);
         Intent intent = getIntent();
         pet = intent.getStringExtra("pet");
-        Log.e("TAG", pet );
         Gson gson = new Gson();
         currentPet = gson.fromJson(pet,Pet.class);
         
@@ -82,6 +89,21 @@ public class PetActivity extends AppCompatActivity implements View.OnClickListen
                 imgGenreView.setImageTintList(ColorStateList.valueOf(Color.parseColor("#ffffff")));
                 break;
         }
+
+        //cambia color de elemtnos si es un gato
+       if(currentPet.getType().contentEquals("cat")){
+
+           container.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FEEEB5")));
+           clGenre.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FEEEB5")));
+           clColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FEEEB5")));
+           clAge.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FEEEB5")));
+           tvPetColor.setTextColor(ColorStateList.valueOf(Color.parseColor("#424242")));
+           tvBreedScreen.setTextColor(ColorStateList.valueOf(Color.parseColor("#424242")));
+           tvPetAge.setTextColor(ColorStateList.valueOf(Color.parseColor("#424242")));
+           edad.setTextColor(ColorStateList.valueOf(Color.parseColor("#424242")));
+           genre.setTextColor(ColorStateList.valueOf(Color.parseColor("#424242")));
+           imgGenreView.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#424242")));
+       }
 
     }
 

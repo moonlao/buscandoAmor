@@ -69,32 +69,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    /*private void LoadPets() {
 
-        dbRef.addValueEventListener(
-                new ValueEventListener() {
-
-                    public void onDataChange(DataSnapshot snapshot) {
-                        adapter.clear();
-
-                        for (DataSnapshot child : snapshot.getChildren()) {
-                            Pet tempPet = child.getValue(Pet.class);
-                            adapter.addNewPet(tempPet);
-
-                        }
-
-                    }
-
-
-                    @Override
-                    public void onCancelled(DatabaseError error) {
-
-                    }
-                }
-        );
-    }
-
-     */
 
     @Override
     public void onClick(View v) {
