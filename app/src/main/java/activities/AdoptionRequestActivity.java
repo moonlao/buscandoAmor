@@ -51,7 +51,7 @@ public class AdoptionRequestActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                        Log.e("TAG", String.valueOf(snapshot.exists()) );
+
                         adoptionsAdapter.clear();
                         for (DataSnapshot child:snapshot.getChildren()
                              ) {

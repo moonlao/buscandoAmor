@@ -105,7 +105,7 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
             Date date;
             date = new Date();
             String requestId =UUID.randomUUID().toString();
-            AdoptionRequest adoptionRequest = new AdoptionRequest(requestId,tempPet.getId(),etName.getText().toString(),etEmail.getText().toString(),etAddress.getText().toString(),etReason.getText().toString(),"waiting",date);
+            AdoptionRequest adoptionRequest = new AdoptionRequest(requestId,tempPet.getId(),etName.getText().toString(),etEmail.getText().toString(),etAddress.getText().toString(),etReason.getText().toString(),"esperando",date);
 
             FirebaseDatabase.getInstance().getReference("AdoptionRequest").child(FirebaseAuth.getInstance().getUid()).child(requestId).setValue(adoptionRequest).addOnCompleteListener(task->{
 

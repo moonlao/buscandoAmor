@@ -1,6 +1,8 @@
 package adapters;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,6 +76,19 @@ public class PetsAdapter extends RecyclerView.Adapter<PetsAdapter.PetViewHolder>
 
             case "Female":
                 holder.imgGenre.setImageResource(R.drawable.ic_female);
+                break;
+        }
+        switch (petsList.get(position).getType()){
+
+            case"dog":
+                holder.imgGenre.setImageTintList(ColorStateList.valueOf(Color.parseColor("#BFB5F9")));
+                holder.petImg.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#BFB5F9")));
+                break;
+
+            case"cat":
+                holder.imgGenre.setImageTintList(ColorStateList.valueOf(Color.parseColor("#F9B5B5")));
+                holder.petImg.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#F9B5B5")));
+
                 break;
         }
         Glide.with(group.getContext()).load(petsList.get(position).getImg()).into(holder.petImg);

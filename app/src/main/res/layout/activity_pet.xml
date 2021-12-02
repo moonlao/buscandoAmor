@@ -36,7 +36,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline6"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="1.0">
 
         <TextView
             android:id="@+id/tvPetNameScreen"
@@ -56,7 +56,7 @@
             android:id="@+id/tvBreedScreen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:text="Bulldog"
             app:layout_constraintStart_toStartOf="@+id/tvPetNameScreen"
             app:layout_constraintTop_toBottomOf="@+id/tvPetNameScreen" />
@@ -71,7 +71,6 @@
             android:backgroundTint="#673AB7"
             app:layout_constraintEnd_toStartOf="@+id/clColor"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvBreedScreen">
 
@@ -83,7 +82,7 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="8dp"
                 android:fontFamily="@font/raleway_semibold"
-                android:text="8 meses"
+                android:text="11 meses"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -110,7 +109,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/clColor"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="93dp"
             android:layout_marginStart="16dp"
             android:background="@drawable/btn_main"
             android:backgroundTint="#673AB7"
@@ -142,7 +141,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/clGender"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="93dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="24dp"
             android:background="@drawable/btn_main"
