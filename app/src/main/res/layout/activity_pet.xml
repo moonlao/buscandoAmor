@@ -195,7 +195,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="24dp"
-            android:fontFamily="@font/raleway_light"
+            android:fontFamily="@font/raleway_regular"
             android:text="Pug fue rescatado en las calles de Cali, desnutrido y asustado, contagiada de moquillo, una enfermedad casi mortal. Con mucha ayuda, logró superarlo y ahora está listo para encontrar su nuevo hogar. "
             android:textColor="#2D2D2D"
             app:layout_constraintEnd_toEndOf="parent"
