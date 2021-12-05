@@ -1,13 +1,14 @@
 {
   "project_info": {
     "project_number": "1091939386420",
+    "firebase_url": "https://buscando-amor-15a00-default-rtdb.firebaseio.com",
     "project_id": "buscando-amor-15a00",
     "storage_bucket": "buscando-amor-15a00.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1091939386420:android:e3c0d6f1736e8e789df661",
+        "mobilesdk_app_id": "1:1091939386420:android:4bb48b31bc10273e9df661",
         "android_client_info": {
           "package_name": "com.moonlao.buscandoamor"
         }
