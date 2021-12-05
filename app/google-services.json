@@ -1,34 +1,33 @@
 {
   "project_info": {
-    "project_number": "59226766385",
-    "firebase_url": "https://buscandoamor-15a6c-default-rtdb.firebaseio.com",
-    "project_id": "buscandoamor-15a6c",
-    "storage_bucket": "buscandoamor-15a6c.appspot.com"
+    "project_number": "1091939386420",
+    "project_id": "buscando-amor-15a00",
+    "storage_bucket": "buscando-amor-15a00.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:59226766385:android:73c0d5a0080816f8272910",
+        "mobilesdk_app_id": "1:1091939386420:android:e3c0d6f1736e8e789df661",
         "android_client_info": {
           "package_name": "com.moonlao.buscandoamor"
         }
       },
       "oauth_client": [
         {
-          "client_id": "59226766385-2e7jvcbkv63d265u7eje3rn8shtri37u.apps.googleusercontent.com",
+          "client_id": "1091939386420-oain7djqo50m9o3l2evbv7hsc8ip9vn6.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC4Zp1a7wPgV4ZHxDX4rBBui9g1fuBJnT4"
+          "current_key": "AIzaSyAeVN1McbndolfeOoF9fyQBZk5GubYF_fE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "59226766385-2e7jvcbkv63d265u7eje3rn8shtri37u.apps.googleusercontent.com",
+              "client_id": "1091939386420-oain7djqo50m9o3l2evbv7hsc8ip9vn6.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
