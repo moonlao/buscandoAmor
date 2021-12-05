@@ -120,11 +120,12 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     private void SetDogs() {
 
+        adapter.clear();
         db.getReference().child("Pets").orderByChild("type").equalTo("dog").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                adapter.clear();
+
 
                 for (DataSnapshot child : snapshot.getChildren()) {
                     Pet tempPet = child.getValue(Pet.class);
@@ -150,12 +151,13 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void SetCats() {
-
+        adapter.clear();
+        
         db.getReference().child("Pets").orderByChild("type").equalTo("cat").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                adapter.clear();
+
 
                 for (DataSnapshot child : snapshot.getChildren()) {
                     Pet tempPet = child.getValue(Pet.class);

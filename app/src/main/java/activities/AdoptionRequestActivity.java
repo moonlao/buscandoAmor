@@ -52,7 +52,7 @@ public class AdoptionRequestActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
 
 
-                        adoptionsAdapter.clear();
+                            adoptionsAdapter.clear();
                         for (DataSnapshot child:snapshot.getChildren()
                              ) {
                             AdoptionRequest tempRequest = child.getValue(AdoptionRequest.class);
